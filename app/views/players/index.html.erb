@@ -1,16 +1,20 @@
 <%= javascript_include_tag("//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js") %>
 <%= javascript_include_tag("jquery.tubular.1.0.js") %>
 <%= javascript_include_tag("wrapper.js") %>
-<body xmlns="http://www.w3.org/1999/html">
+<%= javascript_include_tag("chessboard.js") %>
+
+<%= stylesheet_link_tag 'chessboard.css' %>
+
+<body>
 <div id="wrapper">
 
-  <h1>Players</h1>
+  <h1>Profile</h1>
 
   <div class="text-center">
     <%= link_to 'Add Player', new_player_path, class: "btn btn-danger" %>
   </div>
+  <br/>
 
-  &ensp;
   <table class="table table-hover">
     <thead>
     <tr>
@@ -27,22 +31,56 @@
         <td><%= player.first_name %></td>
         <td><%= player.last_name %></td>
         <td><%= player.rating %></td>
-        <td><%= link_to 'View', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Delete', player, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <td><%= link_to 'View', player, class: 'glyphicon glyphicon-zoom-in' %></td>
+        <td><%= link_to 'Edit', edit_player_path(player), class: 'glyphicon glyphicon-pencil' %></td>
+        <td><%= link_to 'Delete', player, method: :delete, data: {confirm: 'Are you sure?'}, class: 'glyphicon glyphicon-remove' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
 
-  <div class="btn-group">
-    <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Games <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-      <iframe border="0" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230442"></iframe>
-      <iframe border="0" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230458"></iframe>
-    </ul>
+  <div class=".col-md-4">
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Games <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3244194"></iframe>
+        <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230442"></iframe>
+        <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230458"></iframe>
+        <iframe border="5" frameborder="0" allowtransparency="true" width="603" height="465" src="//www.chess.com/emboard?id=3244196"></iframe>
+      </ul>
+    </div>
+    <input type="button" id="start" value="Start" class="btn btn-info btn-xs"/>
+    <input type="button" id="clear" value="Clear" class="btn btn-info btn-xs"/>
+    <input type="button" id="RuyLopez" value="Ruy Lopez" class="btn btn-info btn-xs"/>
+    <input type="button" id="Checkmate" value="Rook Checkmate" class="btn btn-info btn-xs"/>
   </div>
+
+  <div class="col-md-6 col-md-offset-3">
+    <div id="board2" style="width: 400px"></div>
+  </div>
+
+  <script>
+    var board2 = ChessBoard('board2', {
+      draggable: true,
+      dropOffBoard: 'trash',
+      sparePieces: true
+    });
+    $('#start').on('click', board2.start);
+    $('#clear').on('click', board2.clear);
+
+    $('#RuyLopez').on('click', function() {
+      board2.position('r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R');
+    });
+
+    $('#Checkmate').on('click', function() {
+      board2.position({
+        a4: 'bK',
+        c4: 'wK',
+        a7: 'wQ'
+      });
+    });
+  </script>
 </div>
 </body>
