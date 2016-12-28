@@ -10,6 +10,26 @@
 
   <h1>Profile</h1>
 
+  <div id="sideBar" class="text-right">
+    <div id="socMedBar">
+
+      <!--<p id="main" class="main">Click Dots</p>-->
+
+      <ul id="SocMedia" class="SocMedia">
+        <a href="https://www.facebook.com/Aesk3y" target="new" class="facebook"></a>
+        <a href="https://www.instagram.com/pufferfishart/" target="new" class="instagram"></a>
+      </ul>
+
+    </div>
+  </div>
+
+  <div id="video-controls">
+    <button type="button" class="tubular-mute btn btn-primary btn-xs">
+      Mute
+    </button>
+  </div>
+
+
   <div class="text-center">
     <%= link_to 'Add Player', new_player_path, class: "btn btn-danger" %>
   </div>
@@ -31,7 +51,6 @@
         <td><%= player.first_name %></td>
         <td><%= player.last_name %></td>
         <td><%= player.rating %></td>
-        <td><%= link_to 'View', player, class: 'glyphicon glyphicon-zoom-in' %></td>
         <td><%= link_to 'Edit', edit_player_path(player), class: 'glyphicon glyphicon-pencil' %></td>
         <td><%= link_to 'Delete', player, method: :delete, data: {confirm: 'Are you sure?'}, class: 'glyphicon glyphicon-remove' %></td>
       </tr>
@@ -51,36 +70,17 @@
         <iframe border="5" frameborder="0" allowtransparency="true" width="603" height="465" src="//www.chess.com/emboard?id=3244196"></iframe>
       </ul>
     </div>
+
     <input type="button" id="start" value="Start" class="btn btn-info btn-xs"/>
     <input type="button" id="clear" value="Clear" class="btn btn-info btn-xs"/>
-    <input type="button" id="RuyLopez" value="Ruy Lopez" class="btn btn-info btn-xs"/>
-    <input type="button" id="Checkmate" value="Checkmate" class="btn btn-info btn-xs"/>
+    <input type="button" id="flip" value="Flip" class="btn btn-info btn-xs"/>
+    <input type="button" id="ruyLopez" value="Ruy Lopez" class="btn btn-info btn-xs"/>
+    <input type="button" id="checkMate" value="Checkmate" class="btn btn-info btn-xs"/>
   </div>
 
   <div class="col-md-6 col-md-offset-3">
     <div id="board2" style="width: 400px"></div>
   </div>
-
-  <script>
-    var board2 = ChessBoard('board2', {
-      draggable: true,
-      dropOffBoard: 'trash',
-      sparePieces: true
-    });
-    $('#start').on('click', board2.start);
-    $('#clear').on('click', board2.clear);
-
-    $('#RuyLopez').on('click', function() {
-      board2.position('r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R');
-    });
-
-    $('#Checkmate').on('click', function() {
-      board2.position({
-        a4: 'bK',
-        c4: 'wK',
-        a7: 'wQ'
-      });
-    });
-  </script>
+  <%= render 'players/chessboardconfig' %>
 </div>
 </body>

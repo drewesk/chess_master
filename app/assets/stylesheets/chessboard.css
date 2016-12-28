@@ -8,6 +8,17 @@
  * Date: 10 Aug 2013
  */
 
+.facebook {
+  content: url(1472460798_Facebook.png);
+  height: 35px;
+  width: 35px;
+}
+.instagram {
+  content: url(1472458776_social-instagram-new-circle.png);
+  height: 35px;
+  width: 35px;
+}
+
 /* clearfix */
 .clearfix-7da63 {
   clear: both;
