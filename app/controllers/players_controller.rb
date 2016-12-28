@@ -5,15 +5,6 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     @players = Player.all
-  end
-
-  # GET /players/1
-  # GET /players/1.json
-  def show
-  end
-
-  # GET /players/new
-  def new
     @player = Player.new
   end
 
@@ -28,7 +19,7 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to root_path, notice: 'Player was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Player was successfully created.' }
         format.json { render :show, status: :created, location: @player }
       else
         format.html { render :new }
@@ -42,7 +33,7 @@ class PlayersController < ApplicationController
   def update
     respond_to do |format|
       if @player.update(player_params)
-        format.html { redirect_to root_path, notice: 'Player was successfully updated.' }
+        format.html { redirect_to root_url, notice: 'Player was successfully updated.' }
         format.json { render :show, status: :ok, location: @player }
       else
         format.html { render :edit }

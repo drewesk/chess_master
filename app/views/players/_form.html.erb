@@ -1,32 +1,32 @@
-<%= form_for(player) do |f| %>
-  <% if player.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
+<%= form_for(player, :html => {:class => "form-inline"}) do |f| %>
+<% if player.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
 
-      <ul>
+    <ul>
       <% player.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="player_field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div class="player_field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="player_field">
-    <%= f.label :rating %>
-    <%= f.number_field :rating %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+    </ul>
   </div>
 <% end %>
+
+<div class="form-group">
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+</div>
+
+<div class="form-group">
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+</div>
+
+<div class="form-group">
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+</div>
+<div class="form-group">
+  <%= f.submit('Add Player', class: 'btn btn-danger btn-xs' ) %>
+</div>
+<% end %>
+
