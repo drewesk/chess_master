@@ -47,7 +47,7 @@
 </script>
 
 <div id="wrapper">
-  <div id="hide_content">
+  <div id="hide_content_top">
 
     <h1>Profile</h1>
 
@@ -60,19 +60,21 @@
       </div>
     </div>
 
-    <div id="video-controls">
-      <button type="button" class="tubular-mute btn btn-primary btn-xs">
-        unMute
-      </button>
-      <button type="button" class="tubular-play btn btn-primary btn-xs">
-        Play
-      </button>
-      <button type="button" class="tubular-pause btn btn-primary btn-xs">
-        Pause
-      </button>
-    </div>
+  </div>
 
+  <div id="video-controls">
+    <button type="button" class="tubular-mute btn btn-primary btn-xs">
+      unMute
+    </button>
+    <button type="button" class="tubular-play btn btn-primary btn-xs">
+      Play
+    </button>
+    <button type="button" class="tubular-pause btn btn-primary btn-xs">
+      Pause
+    </button>
+  </div>
 
+  <div id="hide_content_bottom">
     <div class="text-center">
       <%= render 'form', player: @player %>
       &ensp;
@@ -113,5 +115,6 @@
       </div>
     </div>
   </div>
+</div>
 
 </body>
