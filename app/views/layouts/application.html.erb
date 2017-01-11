@@ -34,7 +34,8 @@
         </button>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
+        <li id="greets_user"></li>
       </ul>
     </div>
   </div>
@@ -50,5 +51,6 @@
 
   <%= yield %>
 </div>
+<%= javascript_include_tag 'greetings.js' %>
 </body>
 </html>
