@@ -1,0 +1,40 @@
+.sidebar_container {
+  background-color: #212121;
+  margin-top: 25px;
+  float: right;
+  width: 275px;
+  border: 10px solid #777;
+  border-top: none;
+  border-left: none;
+}
+.border {
+  border: 10px solid #777;
+  border-top: none;
+}
+
+li > input[type="checkbox"] {
+  top: 25px;
+}
+
+li > .delete:hover {
+  color: #F7F7F7;
+}
+
+#completed-tasks label {
+  text-decoration: line-through;
+  color: #ffffff;
+}
+
+ul {
+  text-align: left;
+  margin-top: 25px;
+  list-style-image: url('goal_li.png');
+}
+
+ul li input[type=text] {
+  display: none;
+}
+
+ul li.editMode input[type=text] {
+  display: inline-block;
+}

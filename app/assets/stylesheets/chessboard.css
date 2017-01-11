@@ -1,3 +1,22 @@
+.facebook {
+  content: url(1472460798_Facebook.png);
+  height: 35px;
+  width: 35px;
+  float: right;
+}
+.facebook:hover {
+  background-color: darkblue;
+}
+
+.instagram {
+  content: url(1472458776_social-instagram-new-circle.png);
+  height: 35px;
+  width: 35px;
+  float: right;
+}
+.instagram:hover {
+  background-color: #450062;
+}
 /*!
  * chessboard.js v0.3.0
  *
@@ -7,17 +26,6 @@
  *
  * Date: 10 Aug 2013
  */
-
-.facebook {
-  content: url(1472460798_Facebook.png);
-  height: 35px;
-  width: 35px;
-}
-.instagram {
-  content: url(1472458776_social-instagram-new-circle.png);
-  height: 35px;
-  width: 35px;
-}
 
 /* clearfix */
 .clearfix-7da63 {
@@ -38,11 +46,11 @@
 
   /* disable any native browser highlighting */
   -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* white square */
@@ -71,10 +79,12 @@
   font-size: 14px;
   position: absolute;
 }
+
 .alpha-d2270 {
   bottom: 1px;
   right: 3px;
 }
+
 .numeric-fc462 {
   top: 2px;
   left: 2px;

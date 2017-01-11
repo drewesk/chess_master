@@ -1,22 +1,25 @@
 <table class="table table-hover">
-  <thead>
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Rating</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @players.each do |player| %>
+  <div class="border">
+    <thead>
     <tr>
-      <td><%= player.first_name %></td>
-      <td><%= player.last_name %></td>
-      <td><%= player.rating %></td>
-      <td><%= link_to 'Edit', edit_player_path(player), class: 'glyphicon glyphicon-pencil' %></td>
-      <td><%= link_to 'Delete', player, method: :delete, data: {confirm: 'Are you sure?'}, class: 'glyphicon glyphicon-remove' %></td>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
     </tr>
-  <% end %>
-  </tbody>
+    </thead>
+
+    <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.first_name %></td>
+        <td><%= player.last_name %></td>
+        <td><%= player.rating %></td>
+        <td><%= link_to 'Edit', edit_player_path(player), class: 'glyphicon glyphicon-pencil' %></td>
+        <td><%= link_to 'Delete', player, method: :delete, data: {confirm: 'Are you sure?'}, class: 'glyphicon glyphicon-remove' %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </div>
+
 </table>

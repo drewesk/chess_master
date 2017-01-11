@@ -1,50 +1,10 @@
 <%= javascript_include_tag("//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js") %>
 <%= javascript_include_tag("jquery.tubular.1.0.js") %>
-<%= javascript_include_tag("chessboard.js") %>
+<%= javascript_include_tag("chessboard") %>
 
-<%= stylesheet_link_tag 'chessboard.css' %>
+<%= stylesheet_link_tag 'chessboard' %>
 
 <body>
-
-<script>
-  // Script included in HTML to avoid Double Prompt Bug
-  $('document').ready(function() {
-    var videoDefault;
-    var time;
-
-    videoDefault = prompt('Add a YouTube ID or just type( lesson of the week ),\n' +
-        'ID example( ZCAnLxRvNNc ),\n' +
-        'A default will play if left empty.\n' +
-        'none = no video will play');
-
-    switch (videoDefault) {
-      case 'lesson of the week':
-        videoDefault = 'JuLYgClRe-Q';
-        time = 0;
-        break;
-      case  '':
-        videoDefault = 'xmXwdoRG43U';
-        time = 300;
-        break;
-      case  null:
-        videoDefault = 'xmXwdoRG43U';
-        time = 300;
-        break;
-      default:
-        time = 0;
-        break;
-    }
-
-    if (videoDefault === 'none') {
-      // do nothing
-    } else {
-      var options = {videoId: videoDefault, start: time};
-      $('#wrapper').tubular(options);
-    }
-    ;
-
-  });
-</script>
 
 <div id="wrapper">
   <div id="hide_content_top">
@@ -113,10 +73,11 @@
         </div>
 
         <%= render 'players/goal_sidebar' %>
-        <%= render 'players/chessboardconfig' %>
       </div>
     </div>
   </div>
 </div>
+<%= javascript_include_tag 'chessboard_config' %>
+<%= javascript_include_tag 'wrapper' %>
 
 </body>
