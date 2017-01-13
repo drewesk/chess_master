@@ -1,0 +1,75 @@
+<h3 class="text-center">
+  <% link_to('Signup', new_user_path, class: 'text-danger') %></h3>
+
+<div id="sideBar" class="text-right">
+  <div id="socMedBar">
+    <ul id="SocMedia" class="SocMedia">
+      <a href="https://www.facebook.com/Aesk3y" target="new" class="facebook"></a>
+      <a href="https://www.instagram.com/pufferfishart/" target="new" class="instagram"></a>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<div id="video-controls">
+  <button type="button" class="tubular-mute btn btn-primary btn-xs">
+    unMute
+  </button>
+  <button type="button" class="tubular-play btn btn-primary btn-xs">
+    Play
+  </button>
+  <button type="button" class="tubular-pause btn btn-primary btn-xs">
+    Pause
+  </button>
+</div>
+
+&ensp;
+
+
+<div id="hide_content_bottom">
+  <% if !current_user %>
+    <div class="text-center">
+      <%= render 'form', player: @player %>
+      &ensp;
+    </div>
+
+    <%= render 'players/crud_players' %>
+  <% end %>
+  <div class=".col-md-4">
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Games <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu">
+        <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3244194"></iframe>
+        <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230442"></iframe>
+        <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230458"></iframe>
+        <iframe border="5" frameborder="0" allowtransparency="true" width="603" height="465" src="//www.chess.com/emboard?id=3244196"></iframe>
+      </ul>
+    </div>
+
+    <div class="text-center">
+      <input type="button" id="start" value="Start" class="btn btn-info btn-xs"/>
+      <input type="button" id="clear" value="Clear" class="btn btn-info btn-xs"/>
+      <input type="button" id="flip" value="Flip" class="btn btn-info btn-xs"/>
+      &ensp;
+      <input type="button" id="ruyLopez" value="Ruy Lopez" class="btn btn-info btn-xs"/>
+      <input type="button" id="checkMate" value="Checkmate" class="btn btn-info btn-xs"/>
+      <input type="button" id="vanGeet" value="Van Geet" class="btn btn-info btn-xs"/>
+      <input type="button" id="urusovGambit" value="Urosov Gambit" class="btn btn-info btn-xs"/>
+      <input type="button" id="dutchDefence" value="Dutch Defence" class="btn btn-info btn-xs"/>
+      <input type="button" id="queensGambit" value="Queen's Gambit" class="btn btn-info btn-xs"/>
+      <input type="button" id="napoleon" value="Napoleon" class="btn btn-info btn-xs"/>
+      <div class="col-md-6 col-md-offset-3">
+        <div id="board2" style="width: 400px"></div>
+      </div>
+
+      <%= render 'players/goal_sidebar' %>
+    </div>
+  </div>
+</div>
+</div>
+<%= javascript_include_tag 'chessboard_config' %>
+<%= javascript_include_tag 'wrapper' %>
