@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'bootstrap-generators'
 gem 'bootstrap-sass', '3.2.0.2'
 gem 'rb-readline'
