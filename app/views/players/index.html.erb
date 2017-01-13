@@ -6,7 +6,12 @@
 
 <body>
 <div id="wrapper">
-  <button id="set_background" class="btn btn-danger btn-xs" disabled>set background</button>
+  <button id="set_background" class="btn btn-danger btn-xs" disabled>
+    set background
+  </button><br />
+  <button type="button" class="btn btn-danger" id="hide_button">
+    Hide/Show
+  </button>
   <div id="hide_content_top">
     <% if current_user %>
       <h1><%= current_user.first_name.titlecase %>'s Profile</h1>
