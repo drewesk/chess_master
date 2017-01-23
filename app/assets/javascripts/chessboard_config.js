@@ -1,19 +1,19 @@
-var board2 = ChessBoard('board2', {
+var board = ChessBoard('board', {
   draggable: true,
   dropOffBoard: 'trash',
   sparePieces: true,
   showNotation: true,
 });
-$('#start').on('click', board2.start);
-$('#clear').on('click', board2.clear);
-$('#flip').on('click', board2.flip);
+$('#start').on('click', board.start);
+$('#clear').on('click', board.clear);
+$('#flip').on('click', board.flip);
 
 $('#ruyLopez').on('click', function() {
-  board2.position('r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R');
+  board.position('r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R');
 });
 
 $('#checkMate').on('click', function() {
-  board2.position({
+  board.position({
     a4: 'bK',
     c4: 'wK',
     a7: 'wQ'
@@ -21,19 +21,19 @@ $('#checkMate').on('click', function() {
 });
 
 $('#vanGeet').on('click', function() {
-  board2.position('rnbqkbnr/pppp1ppp/8/4p3/8/2N5/PPPPPPPP/R1BQKBNR w KQkq e6 0 2');
+  board.position('rnbqkbnr/pppp1ppp/8/4p3/8/2N5/PPPPPPPP/R1BQKBNR w KQkq e6 0 2');
 });
 $('#urusovGambit').on('click', function() {
-  board2.position('rnbqkb1r/ppp1pppp/5n2/8/2BpP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4');
+  board.position('rnbqkb1r/ppp1pppp/5n2/8/2BpP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4');
 });
 $('#dutchDefence').on('click', function() {
-  board2.position('rnbqkb1r/pppp2pp/4pn2/5p2/3P4/5NP1/PPP1PPBP/RNBQK2R b KQkq - 3 4');
+  board.position('rnbqkb1r/pppp2pp/4pn2/5p2/3P4/5NP1/PPP1PPBP/RNBQK2R b KQkq - 3 4');
 });
 $('#queensGambit').on('click', function() {
-  board2.position('rnbqkb1r/pp3ppp/4pn2/2p5/2BP4/4PN2/PP3PPP/RNBQ1RK1 b kq - 1 6');
+  board.position('rnbqkb1r/pp3ppp/4pn2/2p5/2BP4/4PN2/PP3PPP/RNBQ1RK1 b kq - 1 6');
 });
 $('#napoleon').on('click', function() {
-  board2.position('rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR b KQkq - 3 3');
+  board.position('rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR b KQkq - 3 3');
 });
 
 $('#hide_button').click(function() {

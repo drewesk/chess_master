@@ -7,7 +7,8 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.paths << Emoji.images_path
 
 # Precompile additional assets.
-Rails.application.config.assets.precompile += %w( jquery.tubular.1.0.js chessboard.js greetings.js wrapper.js goal_sidebar.js chessboard_config.js )
+Rails.application.config.assets.precompile += %w( jquery.tubular.1.0.js chessboard-0.3.0.min.js greetings.js wrapper.js goal_sidebar.js chessboard_config.js )
+Rails.application.config.assets.precompile += %w( stockfish.js stockfish_config.js chess.min.js book.bin )
 Rails.application.config.assets.precompile += %w( chessboard.css goal_sidebar.css )
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
