@@ -58,7 +58,7 @@ function engineGame(options) {
     min -= hours * 60;
     var display = hours + ':' + ('0' + min).slice(-2) + ':' + ('0' + sec).slice(-2);
     if(isRunning) {
-      display += sec & 1 ? ' <--' : ' <-';
+      display += sec & 1 ? '_' : ' ' ;
     }
     $(id).text(display);
   }
