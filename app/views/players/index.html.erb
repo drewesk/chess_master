@@ -7,13 +7,6 @@
 <body>
 <div id="wrapper">
 
-  <button type="button" class="btn btn-danger btn-xs">
-    <%= link_to 'Play Computer', new_game_path %>
-  </button>
-  <button id="set_background" class="btn btn-danger btn-xs" disabled>
-    set background
-  </button>
-  <br/>
   <button type="button" class="btn btn-danger" id="hide_button">
     Hide/Show
   </button>
@@ -22,10 +15,10 @@
 
     <% if current_user %>
       <h1><%= current_user.first_name.titlecase %>'s Profile</h1>
-      <%= render 'index_content' %>
+      <%= render 'players/partials/index_content' %>
     <% else %>
       <h1>Sample Profile</h1>
-      <%= render 'index_content' %>
+      <%= render 'players/partials/index_content' %>
     <% end %>
 
   </div>
