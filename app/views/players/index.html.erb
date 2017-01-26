@@ -11,16 +11,13 @@
     Hide/Show
   </button>
 
-  <div id="hide_content_top">
-
-    <% if current_user %>
-      <h1><%= current_user.first_name.titlecase %>'s Profile</h1>
-      <%= render 'players/partials/index_content' %>
-    <% else %>
-      <h1>Sample Profile</h1>
-      <%= render 'players/partials/index_content' %>
-    <% end %>
-
-  </div>
+  <% if current_user %>
+    <%= render 'players/partials/index_content' %>
+  <% else %>
+    <%= render 'players/partials/video_controls' %>
+    <%= render 'players/partials/homepage' %>
+  <% end %>
+  <%= javascript_include_tag 'chessboard_config' %>
+  <%= javascript_include_tag 'wrapper' %>
 </div>
 </body>

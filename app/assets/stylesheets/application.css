@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.black-65 {
+  background-image: url('transparent.png');
+  color: #aeaeae;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+

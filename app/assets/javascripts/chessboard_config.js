@@ -37,6 +37,5 @@ $('#napoleon').on('click', function() {
 });
 
 $('#hide_button').click(function() {
-  $('#hide_content_top').toggle(3000);
-  $('#hide_content_bottom').toggle(3000);
+  $('#hide_content').toggle(4000);
 });

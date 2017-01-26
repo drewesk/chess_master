@@ -1,33 +1,17 @@
+
 <h3 class="text-center">
   <% link_to('Signup', new_user_path, class: 'text-danger') %></h3>
 
-<div id="sideBar" class="text-right">
-  <div id="socMedBar">
-    <ul id="SocMedia" class="SocMedia">
-      <a href="https://www.facebook.com/Aesk3y" target="new" class="facebook"></a>
-      <a href="https://www.instagram.com/pufferfishart/" target="new" class="instagram"></a>
-    </ul>
-  </div>
-</div>
+<%= render 'players/partials/social_media' %>
 
-</div>
-
-<div id="video-controls">
-  <button type="button" class="tubular-mute btn btn-primary btn-xs">
-    unMute
-  </button>
-  <button type="button" class="tubular-play btn btn-primary btn-xs">
-    Play
-  </button>
-  <button type="button" class="tubular-pause btn btn-primary btn-xs">
-    Pause
-  </button>
-</div>
-
-&ensp;
+<%= render 'players/partials/video_controls' %>
 
 
-<div id="hide_content_bottom">
+
+<div id="hide_content">
+  <h1><%= current_user.first_name.titlecase %>'s Profile</h1>
+  &ensp;
+
   <div class="text-center">
     <%= render 'players/partials/form', player: @player %>
     &ensp;
@@ -70,6 +54,4 @@
     </div>
   </div>
 </div>
-</div>
-<%= javascript_include_tag 'chessboard_config' %>
-<%= javascript_include_tag 'wrapper' %>
+
