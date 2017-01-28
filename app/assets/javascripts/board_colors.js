@@ -1,24 +1,20 @@
-//// Themes
-$("#marble").click(function() {
-  $(".white-1e1d7").css("background-image", "url('assets/marbleW.jpg')");
-  $(".black-3c85d").css("background-image", "url('assets/marbleB.jpg')");
-});
-//// White square colors
+// //// Themes
 
-$("#whiteGreen").click(function() {
-  $(".white-1e1d7").css("background-color", "#15a007");
-});
+// $("#marbleTheme").click(function() {
+//   $("div.white-1e1d7").removeClass("white-1e1d7").addClass("marbleThemeW");
+//   $("div.black-3c85d").removeClass("black-3c85d").addClass("marbleThemeB");
+// });
 
-$("#whiteWhite").click(function() {
-  $(".white-1e1d7").css("background-color", "#e9ebf0");
-});
 
-//// Black square colors
-
-$("#blackBlack").click(function() {
-  $(".black-3c85d").css("background-color", "#212121");
+$("#greenTheme").click(function() {
+  // $(".white-1e1d7").css("background-color", "#15a007");
+  $("div.white-1e1d7").toggleClass("greenThemeW");
+  $("div.black-3c85d").toggleClass("greenThemeB");
 });
 
-$("#blackTurquoise").click(function() {
-  $(".black-3c85d").css("background-color", "#022729");
-});
+//
+// $("#blackWhiteTheme").click(function() {
+//   $("div.white-1e1d7").toggleClass("blackWhiteThemeW");
+//   $("div.black-3c85d").toggleClass("blackWhiteThemeB");
+// });
+

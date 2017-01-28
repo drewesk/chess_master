@@ -13,11 +13,12 @@
   &ensp;
 
   <div class="text-center">
-    <%= render 'players/partials/form', player: @player %>
+    <%# render 'players/partials/form', player: @player %>
     &ensp;
   </div>
 
-  <%= render 'players/partials/crud_players' %>
+  <%# render 'players/partials/crud_players' %>
+
   <div class=".col-md-4">
     <div class="btn-group">
       <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,6 +48,9 @@
       <div class="col-md-6 col-md-offset-3">
 
         <div id="board" style="width: 400px"></div>
+
+        <!--<button id="coolPieces" value="Cool Chess Pieces" class="btn btn-info btn-xs"/>-->
+        <!--<button id="defaultPieces" value="default Chess Pieces" class="btn btn-info btn-xs"/>-->
 
       </div>
 

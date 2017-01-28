@@ -4,11 +4,10 @@
 
 <%= stylesheet_link_tag 'chessboard' %>
 
-<body>
 <div id="wrapper">
 
   <button type="button" class="btn btn-danger" id="hide_button">
-    Hide/Show
+    Show Content
   </button>
 
   <% if current_user %>
@@ -20,4 +19,4 @@
   <%= javascript_include_tag 'chessboard_config' %>
   <%= javascript_include_tag 'wrapper' %>
 </div>
-</body>
+<%= javascript_include_tag 'show_content.js' %>

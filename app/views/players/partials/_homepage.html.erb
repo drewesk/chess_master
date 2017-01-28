@@ -1,54 +1,59 @@
 <div id="hide_content">
-  <h2 class="text-center">Welcome to Chess-x</h2>
+  <h2 class=" text-center">Welcome to Chess-x</h2>
   <p class="black-65">
     I'm currently building the site to
     offer a toolbelt for chess players looking to sharpen their game. Feel free to click the "play engine" link and
-    see what one of the largest open-source chess <small>API's(ApplicationProgramInterface)</small>. I integrated Stockfish(<%= link_to('StockfishChess.org', 'https://stockfishchess.org/', class: 'btn btn-primary btn-xs') %>)
+    see what one of the largest open-source chess
+    <small>API's(ApplicationProgramInterface)</small>
+    . I integrated
+    Stockfish(<%= link_to('StockfishChess.org', 'https://stockfishchess.org/', class: 'btn btn-primary btn-xs') %>)
     to output whether black or white has the mathematical advantage from move #2 on, playing against the computer.
   </p>
-</div>
-
-<h1>Sample Profile</h1>
-&ensp;
-
-<div class="text-center">
-  <%= render 'players/partials/form', player: @player %>
+  <h1>Sample Profile</h1>
   &ensp;
-</div>
-
-<%= render 'players/partials/crud_players' %>
-<div class=".col-md-4">
-  <div class="btn-group">
-    <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Games <span class="caret"></span>
-    </button>
-
-    <ul class="dropdown-menu">
-      <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3244194"></iframe>
-      <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230442"></iframe>
-      <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230458"></iframe>
-    </ul>
-  </div>
 
   <div class="text-center">
-    <input type="button" id="start" value="Start" class="btn btn-info btn-xs"/>
-    <input type="button" id="clear" value="Clear" class="btn btn-info btn-xs"/>
-    <input type="button" id="flip" value="Flip" class="btn btn-info btn-xs"/>
+    <%# render 'players/partials/form', player: @player %>
     &ensp;
-    <input type="button" id="ruyLopez" value="Ruy Lopez" class="btn btn-info btn-xs"/>
-    <input type="button" id="checkMate" value="Checkmate" class="btn btn-info btn-xs"/>
-    <input type="button" id="vanGeet" value="Van Geet" class="btn btn-info btn-xs"/>
-    <input type="button" id="urusovGambit" value="Urosov Gambit" class="btn btn-info btn-xs"/>
-    <input type="button" id="dutchDefence" value="Dutch Defence" class="btn btn-info btn-xs"/>
-    <input type="button" id="queensGambit" value="Queen's Gambit" class="btn btn-info btn-xs"/>
-    <input type="button" id="napoleon" value="Napoleon" class="btn btn-info btn-xs"/>
-    <div class="col-md-6 col-md-offset-3">
+  </div>
 
-      <div id="board" style="width: 400px"></div>
+  <%# render 'players/partials/crud_players' %>
 
+  <div class=".col-md-4">
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Games <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu">
+        <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3244194"></iframe>
+        <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230442"></iframe>
+        <iframe border="5" frameborder="0" allowtransparency="true" width="560" height="450" src="//www.chess.com/emboard?id=3230458"></iframe>
+      </ul>
     </div>
 
-    <%= render 'players/partials/goal_sidebar' %>
+    <div class="text-center">
+      <input type="button" id="start" value="Start" class="btn btn-info btn-xs"/>
+      <input type="button" id="clear" value="Clear" class="btn btn-info btn-xs"/>
+      <input type="button" id="flip" value="Flip" class="btn btn-info btn-xs"/>
+      &ensp;
+      <input type="button" id="ruyLopez" value="Ruy Lopez" class="btn btn-info btn-xs"/>
+      <input type="button" id="checkMate" value="Checkmate" class="btn btn-info btn-xs"/>
+      <input type="button" id="vanGeet" value="Van Geet" class="btn btn-info btn-xs"/>
+      <input type="button" id="urusovGambit" value="Urosov Gambit" class="btn btn-info btn-xs"/>
+      <input type="button" id="dutchDefence" value="Dutch Defence" class="btn btn-info btn-xs"/>
+      <input type="button" id="queensGambit" value="Queen's Gambit" class="btn btn-info btn-xs"/>
+      <input type="button" id="napoleon" value="Napoleon" class="btn btn-info btn-xs"/>
+      <div class="col-md-6 col-md-offset-3">
+
+        <div id="board" style="width: 400px"></div>
+
+        <!--<button id="coolPieces" class="btn btn-info btn-xs"/>Cool Chess Pieces</button>-->
+        <!--<button id="defaultPieces" class="btn btn-info btn-xs"/>default Chess Pieces</button>-->
+
+      </div>
+
+      <%= render 'players/partials/goal_sidebar' %>
+    </div>
   </div>
-</div>
 </div>

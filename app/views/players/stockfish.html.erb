@@ -14,26 +14,16 @@
     <div class="btn-group">
 
       <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        BlkSqrs<span class="caret"></span>
+        Board Themes<span class="caret"></span>
       </button>
 
       <ul class="dropdown-menu">
-        <button id="blackBlack" class="btn btn-danger">Black</button>
-        <button id="blackTurquoise" class="btn btn-primary">Turquoise</button>
+        </li><button id="greenTheme" class="btn btn-success">Sublime</button></li>
+        <!--<button id="blackWhiteTheme" class="btn btn-primary">Black and White</button>-->
+        <!--<button id="marbleTheme" class="btn btn-primary">Marble</button>-->
       </ul>
     </div>
 
-    <div class="btn-group">
-
-      <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        WhtSqrs <span class="caret"></span>
-      </button>
-
-      <ul class="dropdown-menu">
-        <button id="whiteGreen" class="btn btn-success">Green</button>
-        <button id="whiteWhite" class="btn btn-blank">White</button>
-      </ul>
-    </div>
     <hr>
     <div id="engineStatus">...</div>
   </div>
@@ -70,7 +60,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="showScore" class="control-label col-xs-4 col-sm-6 col-md-4">Show Engine Score</label>
+        <label for="showScore" class="control-label col-xs-4 col-sm-6 col-md-4">Show Engine Analysis</label>
         <div class="col-xs-4 col-sm-6 col-md-4">
           <input type="checkbox" class="form-control" id="showScore" checked></input>
         </div>
@@ -83,7 +73,7 @@
       </div>
     </form>
     <h5>Reading the Score</h5>
-    <small>The engine analyzes the current position to determine which side is winning. Scores with a '+' indicate an
+    <small>The engine analyzes the current position(starting on the second move) to determine which side is winning. Scores with a '+' indicate an
       advantage for white, '-' for black.
     </small>
   </div>
