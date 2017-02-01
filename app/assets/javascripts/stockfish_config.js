@@ -51,13 +51,62 @@ function engineGame(options) {
       status += 'ready.';
     }
     status += ' Book: ' + engineStatus.book;
-    if(engineStatus.search) {
-      status += '<br>' + engineStatus.search;
-      if(engineStatus.score && displayScore) {
-        status += ' Score: ' + engineStatus.score;
+    // if(engineStatus.search) {
+    //   status += '<br>' + engineStatus.search;
+    //   // if(engineStatus.score && displayScore) {
+    //   //   status += ' Score: ' + engineStatus.score;
+    //   // }
+    // }
+    $('#engineStatus').html(status);
+
+    var wAdvantage, bAdvantage;
+
+    function positAdvantage(engineScore) {
+      if(engineScore > 0) {
+        wAdvantage = engineScore;
+        bAdvantage = 0;
+      } if(engineStatus.score < 0) {
+        bAdvantage = engineScore;
+        wAdvantage = 0;
+      } else {
+        return 0;
       }
     }
-    $('#engineStatus').html(status);
+
+    positAdvantage(engineStatus.score);
+
+    var trace1 = {
+      x: [(wAdvantage + 1)],
+      y: ['Advantage'],
+      name: 'White',
+      orientation: 'h',
+      type: 'bar',
+      marker: {
+        color: 'rgba(191,191,191,0.6)',
+        width: 0.5
+      }
+    };
+
+    var trace2 = {
+      x: [(-bAdvantage + 1)],
+      y: ['Advantage'],
+      name:'Black',
+      orientation: 'h',
+      marker: {
+        color: 'rgba(0,0,0,0.6)',
+        width: 0.5
+      },
+      type: 'bar'
+    };
+
+    var data = [trace1, trace2];
+
+    var layout = {
+      title: engineStatus.search,
+      barmode: 'stack'
+    };
+
+    Plotly.newPlot('graphScore', data, layout);
   }
 
   function displayClock(color, t) {
@@ -131,7 +180,7 @@ function engineGame(options) {
         var history = game.history({verbose: true});
         for(var i = 0; i < history.length; ++i) {
           var move = history[i];
-          moves += ' ' + move.from + move.to + (move.promotion ? move.promotion : '');
+          moves += ' ' + move.from + move.to + (move.promotion ? move.promotion  : '');
         }
         uciCmd('position startpos moves' + moves);
         if(time.depth) {
@@ -308,3 +357,5 @@ function engineGame(options) {
     }
   };
 }
+
+

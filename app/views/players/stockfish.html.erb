@@ -1,90 +1,74 @@
 <%= javascript_include_tag 'http://code.jquery.com/jquery-1.10.1.min.js' %>
 <%= javascript_include_tag("chessboard-0.3.0.min") %>
 <%= javascript_include_tag("chess.min") %>
+<%= javascript_include_tag("https://cdn.plot.ly/plotly-latest.min.js") %>
 
 <%= stylesheet_link_tag 'chessboard' %>
 
 <body>
+
+<h1>Play Engine</h1>
 
 <div class="row">
   <div class="col-sm-7 col-md-6">
     <span class="h3" id="time1">0:05:00</span>
     <div id="board" style="width: 400px"></div>
     <span class="h3" id="time2">0:05:00</span>
-    <div class="btn-group">
+    <div id="pgn" class="pngList"></div>
 
+    <div id="engineStatus">...</div>
+
+    <div class="btn-group">
       <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Board Themes<span class="caret"></span>
       </button>
 
       <ul class="dropdown-menu">
-        </li><button id="greenTheme" class="btn btn-success">Sublime</button></li>
-        <!--<button id="blackWhiteTheme" class="btn btn-primary">Black and White</button>-->
-        <!--<button id="marbleTheme" class="btn btn-primary">Marble</button>-->
+        </li>
+        <button id="greenTheme" class="btn btn-success">Sublime</button>
+        </li>
       </ul>
     </div>
-
-    <hr>
-    <div id="engineStatus">...</div>
   </div>
-  <div class="col-sm-5 col-md-6">
-    <h3>Play Computer</h3>
-    <div id="pgn"></div>
-    <hr>
-    <form class="form-horizontal">
-      <div class="form-group">
-        <label for="timeBase" class="control-label col-xs-4 col-sm-6 col-md-4">Time (min)</label>
-        <div class="col-xs-4 col-sm-6 col-md-4">
-          <input type="number" class="form-control" id="timeBase" value="5"></input>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="timeInc" class="control-label col-xs-4 col-sm-6 col-md-4">Increment (sec)</label>
-        <div class="col-xs-4 col-sm-6 col-md-4">
-          <input type="number" class="form-control" id="timeInc" value="0"></input>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="skillLevel" class="control-label col-xs-4 col-sm-6 col-md-4">Engine Skill Level (0-20)</label>
-        <div class="col-xs-4 col-sm-6 col-md-4">
-          <input type="number" class="form-control" id="skillLevel" value="10"></input>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="color" class="control-label col-xs-4 col-sm-6 col-md-4">Choose</label>
-        <div class="col-xs-4 col-sm-6 col-md-4">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-primary active" id="color-white"><input type="radio" name="color">White</label>
-            <label class="btn btn-primary" id="color-black"><input type="radio" name="color">Black</label>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="showScore" class="control-label col-xs-4 col-sm-6 col-md-4">Show Engine Analysis</label>
-        <div class="col-xs-4 col-sm-6 col-md-4">
-          <input type="checkbox" class="form-control" id="showScore" checked></input>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="color" class="control-label col-xs-4 col-sm-6 col-md-4"></label>
-        <div class="col-xs-4 col-sm-6 col-md-4">
-          <button type="button" class="btn btn-primary" onclick="newGame()">New Game</button>
-        </div>
-      </div>
-    </form>
-    <h5>Reading the Score</h5>
-    <small>The engine analyzes the current position(starting on the second move) to determine which side is winning. Scores with a '+' indicate an
-      advantage for white, '-' for black.
-    </small>
+
+
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Time(min)</span>
+    <input type="number" class="form-control" id="timeBase" value="5" aria-describedby="basic-addon1"></input>
   </div>
-</div>
 
-<%= render 'players/partials/board_colors' %>
 
-<%= javascript_include_tag 'stockfish' %>
-<%= javascript_include_tag 'stockfish_config' %>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon3">Level(1-20)</span>
+    <input type="number" class="form-control" id="skillLevel" value="1" aria-describedby="basic-addon3"></input>
+  </div>
 
-<%= render 'players/partials/stockfish_settings' %>
+  <div class="form-group">
+    <div class="col-xs-4 col-sm-6 col-md-4">
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-default" id="color-black"><input type="radio" name="color">Black</label>
+        <label class="btn btn-default active" id="color-white"><input type="radio" class="active" name="color">White</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="color" class="control-label col-xs-4 col-sm-6 col-md-4"></label>
+    <div class="col-xs-4 col-sm-6 col-md-4">
+      <button type="button" class="btn btn-primary" onclick="newGame()">New Game</button>
+    </div>
+  </div>
+
+  <div id="graphScore" class="engineGraph"></div>
+
+
+  <%= render 'players/partials/board_colors' %>
+
+  <%= javascript_include_tag 'stockfish' %>
+  <%= javascript_include_tag 'stockfish_config' %>
+
+  <%= render 'players/partials/stockfish_settings' %>
 
 </body>
 </html>

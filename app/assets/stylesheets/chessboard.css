@@ -4,6 +4,7 @@
   width: 35px;
   float: right;
 }
+
 .facebook:hover {
   background-color: darkblue;
 }
@@ -14,9 +15,11 @@
   width: 35px;
   float: right;
 }
+
 .instagram:hover {
   background-color: #450062;
 }
+
 /*!
  * chessboard.js v0.3.0
  *
@@ -30,6 +33,18 @@
 /* clearfix */
 .clearfix-7da63 {
   clear: both;
+}
+
+.engineGraph {
+  width: 400px;
+  height: 250px;
+  border: 7px solid #404040;
+  margin: 20px;
+  float: right;
+}
+
+.pngList {
+  width: 100px;
 }
 
 /* board */
@@ -60,17 +75,17 @@
   color: #b58863;
 }
 
-.greenThemeW{
+.greenThemeW {
   background: #15a007;
   color: #003b54;
 }
 
-.blackWhiteThemeW{
+.blackWhiteThemeW {
   background: #e9ebf0;
   color: #030303;
 }
 
-.marbleThemeW{
+.marbleThemeW {
   background: url('marbleW.jpg');
   color: #030303;
 }
@@ -80,17 +95,18 @@
   background: #003763;
   color: #bbeef0;
 }
+
 .greenThemeB {
   background: #083d02;
   color: #0083bb;
 }
 
-.blackWhiteThemeB{
+.blackWhiteThemeB {
   background: #393939;
   color: #ffffff;
 }
 
-.marbleThemeB{
+.marbleThemeB {
   background: url('marbleB.jpg');
   color: #ffffff;
 }
