@@ -21,3 +21,35 @@
   margin-right: 10px;
 }
 
+.stockfish-sidebar {
+  margin: 20px;
+  float: right;
+  max-width: 500px;
+}
+
+.output, .pgnContainer, .fenContainer {
+  background-color: white;
+}
+.output {
+  border: solid black 5px;
+  position: relative;
+  width: 400px;
+  text-align: center;
+  padding: 10px;
+}
+
+.pgnContainer {
+  border: solid black 5px;
+  width: 75px;
+  min-height: 30px;
+  float: left;
+}
+
+.fenContainer {
+  margin-top: -20px;
+  border: solid black 5px;
+  width: 300px;
+  min-height: 30px;
+  float: right;
+  word-wrap: break-word;
+}

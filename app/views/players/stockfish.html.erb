@@ -1,22 +1,21 @@
-<%= javascript_include_tag 'http://code.jquery.com/jquery-1.10.1.min.js' %>
+<%= javascript_include_tag("http://code.jquery.com/jquery-1.10.1.min.js") %>
 <%= javascript_include_tag("chessboard-0.3.0.min") %>
 <%= javascript_include_tag("chess.min") %>
-<%= javascript_include_tag("https://cdn.plot.ly/plotly-latest.min.js") %>
 
 <%= stylesheet_link_tag 'chessboard' %>
 
 <body>
 
-<h1>Play Engine</h1>
+<h1>Play Stockfish Engine</h1>
+<small>The best open-source chess engine in existence.</small>
+
 
 <div class="row">
   <div class="col-sm-7 col-md-6">
     <span class="h3" id="time1">0:05:00</span>
     <div id="board" style="width: 400px"></div>
     <span class="h3" id="time2">0:05:00</span>
-    <div id="pgn" class="pngList"></div>
 
-    <div id="engineStatus">...</div>
 
     <div class="btn-group">
       <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,16 +31,9 @@
   </div>
 
 
-
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon1">Time(min)</span>
     <input type="number" class="form-control" id="timeBase" value="5" aria-describedby="basic-addon1"></input>
-  </div>
-
-
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon3">Level(1-20)</span>
-    <input type="number" class="form-control" id="skillLevel" value="1" aria-describedby="basic-addon3"></input>
   </div>
 
   <div class="form-group">
@@ -60,13 +52,23 @@
     </div>
   </div>
 
-  <div id="graphScore" class="engineGraph"></div>
+  <div class="stockfish-sidebar">
+    <h5>Engine Score</h5>
+    <div class="output" id="showScoreList"></div><br/>
+    <h5>PGN and FEN notation</h5>
+    <div id="pgn" class="pgnContainer"></div><br/>
+
+    <div id="fen" class="fenContainer"><h5>FEN notation</h5></div><br/>
+  </div>
+
 
 
   <%= render 'players/partials/board_colors' %>
 
   <%= javascript_include_tag 'stockfish' %>
   <%= javascript_include_tag 'stockfish_config' %>
+
+
 
   <%= render 'players/partials/stockfish_settings' %>
 
