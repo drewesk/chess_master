@@ -135,17 +135,24 @@ function engineGame(options) {
       for (var i = 0; i < gameMove; i++) {
         var color;
         var engineScoreMod = engineStatus.score;
+        var pointsFor = ' points for ';
         if (engineStatus.score !== undefined) {
-          if (engineScoreMod < 0){
+          if (engineScoreMod < 0) {
             engineScoreMod *= -1;
             color = 'Black'
           } else {
             color = 'White'
           }
+        } else if (engineStatus.score == 'Check Mate!!!!!') {
+          engineScoreMod = 'You got Check Mated!';
+          pointsFor = '';
+          color = '';
         } else {
           engineScoreMod = 'score evaluated by move 2-3';
+          pointsFor = '';
+          color = '';
         }
-        var engineScoreMsg = 'Postional advantage of: ' + engineScoreMod + ' points for ' + color;
+        var engineScoreMsg = 'Postional advantage of: ' + engineScoreMod + pointsFor + color;
 
         gameEngineScore = (i + 1) + '. ' + engineScoreMsg;
 
@@ -153,8 +160,6 @@ function engineGame(options) {
       }
       return scoreArr;
     }
-
-
 
 
     $('#showScoreList').text(scoreMoves().join(', '));
@@ -207,7 +212,7 @@ function engineGame(options) {
         if (match[1] == 'cp') {
           engineStatus.score = (score / 100.0).toFixed(2);
         } else if (match[1] == 'mate') {
-          engineStatus.score = '#' + score;
+          engineStatus.score = 'Check Mate!!!!!';
         }
         if (match = line.match(/\b(upper|lower)bound\b/)) {
           engineStatus.score = ((match[1] == 'upper') == (game.turn() == 'w') ? '<= ' : '>= ') + engineStatus.score
